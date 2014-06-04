@@ -11,8 +11,7 @@
     <string name="app_header">What is This</string>
     <string name="answer">Answer</string>
     <string name="title_activity_show_answer">ShowAnswer</string>
-    <string name="score">Your Score</string>
-    <string name="def_score">0</string>
+    <string name="score_header">Your Score</string>
     <string name="playagain">Play Again</string>
     <string name="exit">Exit</string>
 

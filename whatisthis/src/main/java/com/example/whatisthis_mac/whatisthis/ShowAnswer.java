@@ -4,18 +4,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 
 public class ShowAnswer extends ActionBarActivity {
-    private TextView txtShowScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_answer);
-        txtShowScore = (TextView) findViewById(R.id.txtShowScore);
-        txtShowScore.setText(String.valueOf(getIntent().getExtras().getInt("Score")));
     }
 
 
