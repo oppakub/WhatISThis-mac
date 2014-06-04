@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/yourscore"
             android:id="@+id/textView4"
             android:textSize="@dimen/header"
             android:textColor="@color/text_color"
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView5"
+            android:id="@+id/txtShowScore"
             android:textColor="@color/text_color"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
@@ -43,14 +43,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="@string/playagain"
             android:id="@+id/button8"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="@string/exit"
             android:id="@+id/button7"
             android:layout_weight="1" />
     </LinearLayout>
