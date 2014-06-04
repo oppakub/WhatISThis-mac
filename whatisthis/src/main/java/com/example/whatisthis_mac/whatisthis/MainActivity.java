@@ -126,7 +126,7 @@ public class MainActivity extends ActionBarActivity {
     }
     private void setValueToQuestion() {
         if(intTime == 4) {
-            //intTime = 0;
+           // intTime = 0;
             Intent objIntent = new Intent(MainActivity.this, ShowAnswer.class);
             objIntent.putExtra("Score", intUserScore);
             startActivity(objIntent);
