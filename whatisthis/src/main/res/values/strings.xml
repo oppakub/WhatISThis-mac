@@ -10,5 +10,6 @@
     <string name="sheep">Sheep</string>
     <string name="app_header">What is This</string>
     <string name="answer">Answer</string>
+    <string name="title_activity_show_answer">ShowAnswer</string>
 
 </resources>

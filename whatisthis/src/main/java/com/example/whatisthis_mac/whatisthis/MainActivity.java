@@ -1,5 +1,7 @@
 package com.example.whatisthis_mac.whatisthis;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
     private Question objQuestion;
     private MyAlertDialog objMyAlertDialog;
     private int intTime = 1;
+    private MediaPlayer objMediaPlayerButton , objMediaPlayerRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +70,8 @@ public class MainActivity extends ActionBarActivity {
                         strAnswer = null;
                         break;
                 }
+                soundRadioButton();
+                ToaseMessage();
             }
         });
 
@@ -91,14 +97,32 @@ public class MainActivity extends ActionBarActivity {
             objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.NoChooseEveryThing(MainActivity.this);
         }
+        soundButton();
     }
 
     private void setValueToQuestion() {
         if(intTime == 4) {
-            intTime = 0;
+            //intTime = 0;
+            Intent objIntent = new Intent(MainActivity.this, ShowAnswer.class);
+            startActivity(objIntent);
+            
         }
         intTime++;
         objQuestion.setIntQuestion(intTime);
+    }
+
+    private void soundButton() {
+        objMediaPlayerButton = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
+        objMediaPlayerButton.start();
+    }
+
+    private void soundRadioButton() {
+        objMediaPlayerRadioButton = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
+        objMediaPlayerRadioButton.start();
+    }
+
+    private void ToaseMessage() {
+        Toast.makeText(MainActivity.this, "Are you sure your answer is " + strAnswer, 5000).show();
     }
 
 
