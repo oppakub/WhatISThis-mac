@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -19,14 +20,14 @@ public class ShowAnswer extends ActionBarActivity {
         txtShowScore.setText(String.valueOf(getIntent().getExtras().getInt("Score")));
     }
 
-    public void ClickPlayAgain() {
+    public void ClickPlayAgain(View view) {
         Intent objIntent = new Intent(ShowAnswer.this, MainActivity.class);
         startActivity(objIntent);
         finish();
 
     }
-    
-    public void ClickExit() {
+
+    public void ClickExit(View view) {
         finish();
     }
 
