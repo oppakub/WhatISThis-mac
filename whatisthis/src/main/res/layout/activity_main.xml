@@ -9,7 +9,9 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentTop="false">
 
         <TextView
             android:layout_width="wrap_content"
@@ -17,7 +19,8 @@
             android:text="@string/app_header"
             android:id="@+id/textView"
             android:textSize="@dimen/header"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/text_color" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -35,33 +38,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cow"
-                android:id="@+id/radioButton" />
+                android:id="@+id/radioButton"
+                android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/horse"
-                android:id="@+id/radioButton2" />
+                android:id="@+id/radioButton2"
+                android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pig"
-                android:id="@+id/radioButton3" />
+                android:id="@+id/radioButton3"
+                android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sheep"
-                android:id="@+id/radioButton4" />
+                android:id="@+id/radioButton4"
+                android:textColor="@color/text_color" />
         </RadioGroup>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/answer"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal"
-            android:clickable="false" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/answer"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:clickable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="false" />
 </RelativeLayout>
