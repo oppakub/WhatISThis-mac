@@ -9,5 +9,6 @@
     <string name="pig">Pig</string>
     <string name="sheep">Sheep</string>
     <string name="app_header">What is This</string>
+    <string name="answer">Answer</string>
 
 </resources>
