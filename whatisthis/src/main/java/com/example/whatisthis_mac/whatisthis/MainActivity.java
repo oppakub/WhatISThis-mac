@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
     private MyAlertDialog objMyAlert;
     private Question objQuestion;
     private MyAlertDialog objMyAlertDialog;
+    private int intTime = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,22 @@ public class MainActivity extends ActionBarActivity {
         objQuestion.setOnQuestionChangeListener(new Question.OnQuestionChangeListener() {
             @Override
             public void onQuestionChangeListener(Question question) {
-
+                switch (question.getIntQuestion()) {
+                    case 1:
+                        imgAnimal.setImageResource(R.drawable.cow);
+                        break;
+                    case 2:
+                        imgAnimal.setImageResource(R.drawable.horse);
+                        break;
+                    case 3:
+                        imgAnimal.setImageResource(R.drawable.pig);
+                        break;
+                    case 4:
+                        imgAnimal.setImageResource(R.drawable.sheep);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
         radAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -68,12 +84,21 @@ public class MainActivity extends ActionBarActivity {
     private void checkChooseAnswer() {
         if(strAnswer != null) {
             Log.d("oppa", "strAnswer = " + strAnswer);
+            setValueToQuestion();
         } else {
             Log.d("oppa", "Please select one choice");
             //show dialog
             objMyAlertDialog = new MyAlertDialog();
             objMyAlertDialog.NoChooseEveryThing(MainActivity.this);
         }
+    }
+
+    private void setValueToQuestion() {
+        if(intTime == 4) {
+            intTime = 0;
+        }
+        intTime++;
+        objQuestion.setIntQuestion(intTime);
     }
 
 
