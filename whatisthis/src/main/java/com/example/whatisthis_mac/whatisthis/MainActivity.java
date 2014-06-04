@@ -17,7 +17,6 @@ public class MainActivity extends ActionBarActivity {
     private ImageView imgAnimal;
     private RadioGroup radAnswer;
     private String strAnswer;
-    private MyAlertDialog objMyAlert;
     private Question objQuestion;
     private MyAlertDialog objMyAlertDialog;
     private int intTime = 1;
@@ -105,7 +104,7 @@ public class MainActivity extends ActionBarActivity {
             //intTime = 0;
             Intent objIntent = new Intent(MainActivity.this, ShowAnswer.class);
             startActivity(objIntent);
-            
+
         }
         intTime++;
         objQuestion.setIntQuestion(intTime);
@@ -122,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void ToaseMessage() {
-        Toast.makeText(MainActivity.this, "Are you sure your answer is " + strAnswer, 5000).show();
+        Toast.makeText(MainActivity.this, "Are you sure your answer is " + strAnswer, Toast.LENGTH_SHORT).show();
     }
 
 
