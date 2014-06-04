@@ -15,12 +15,21 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup radAnswer;
     private String strAnswer;
     private MyAlertDialog objMyAlert;
+    private Question objQuestion;
+    private MyAlertDialog objMyAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initWidget();
+        objQuestion = new Question();
+        objQuestion.setOnQuestionChangeListener(new Question.OnQuestionChangeListener() {
+            @Override
+            public void onQuestionChangeListener(Question question) {
+
+            }
+        });
         radAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -61,6 +70,9 @@ public class MainActivity extends ActionBarActivity {
             Log.d("oppa", "strAnswer = " + strAnswer);
         } else {
             Log.d("oppa", "Please select one choice");
+            //show dialog
+            objMyAlertDialog = new MyAlertDialog();
+            objMyAlertDialog.NoChooseEveryThing(MainActivity.this);
         }
     }
 
