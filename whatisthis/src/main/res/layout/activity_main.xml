@@ -25,7 +25,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/imgAnimal"
             android:src="@drawable/sheep"
             android:layout_gravity="center_horizontal" />
 
@@ -38,28 +38,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cow"
-                android:id="@+id/radioButton"
+                android:id="@+id/radCow"
                 android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/horse"
-                android:id="@+id/radioButton2"
+                android:id="@+id/radHorse"
                 android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pig"
-                android:id="@+id/radioButton3"
+                android:id="@+id/radPig"
                 android:textColor="@color/text_color" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sheep"
-                android:id="@+id/radioButton4"
+                android:id="@+id/radSheep"
                 android:textColor="@color/text_color" />
         </RadioGroup>
 
