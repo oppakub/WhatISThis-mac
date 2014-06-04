@@ -19,14 +19,19 @@ public class MainActivity extends ActionBarActivity {
     private String strAnswer;
     private Question objQuestion;
     private MyAlertDialog objMyAlertDialog;
-    private int intTime = 1;
+    private int intTime = 1 , intUserChoose , intUserScore;
     private MediaPlayer objMediaPlayerButton , objMediaPlayerRadioButton;
+    private int intUserChooseArray[] , intUserScoreArray[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initWidget();
+        intUserScoreArray = new int[5];
+        intUserChooseArray = new int[5];
+        setValueTrueAnswer();
+
         objQuestion = new Question();
         objQuestion.setOnQuestionChangeListener(new Question.OnQuestionChangeListener() {
             @Override
@@ -55,15 +60,19 @@ public class MainActivity extends ActionBarActivity {
                 switch (i) {
                     case R.id.radCow:
                         strAnswer = "Cow";
+                        intUserChoose = 1;
                         break;
                     case R.id.radHorse:
                         strAnswer = "Horse";
+                        intUserChoose = 2;
                         break;
                     case R.id.radPig:
                         strAnswer = "Pig";
+                        intUserChoose = 3;
                         break;
                     case R.id.radSheep:
                         strAnswer = "Sheep";
+                        intUserChoose = 4;
                         break;
                     default:
                         strAnswer = null;
@@ -74,6 +83,13 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+    }
+
+    private void setValueTrueAnswer() {
+        intUserScoreArray[1] = 1;
+        intUserScoreArray[2] = 2;
+        intUserScoreArray[3] = 3;
+        intUserScoreArray[4] = 4;
     }
 
     private void initWidget() {
@@ -89,6 +105,7 @@ public class MainActivity extends ActionBarActivity {
     private void checkChooseAnswer() {
         if(strAnswer != null) {
             Log.d("oppa", "strAnswer = " + strAnswer);
+            checkScore();
             setValueToQuestion();
         } else {
             Log.d("oppa", "Please select one choice");
@@ -99,12 +116,21 @@ public class MainActivity extends ActionBarActivity {
         soundButton();
     }
 
+    private void checkScore() {
+        intUserChooseArray[intTime] = intUserChoose;
+        Log.d("oppa", "intUserChooseArray[" + String.valueOf(intTime) + "] = " + intUserChoose);
+        if (intUserChooseArray[intTime] == intUserScoreArray[intTime]) {
+            intUserScore++;
+        }
+        Log.d("oppa", "intUserScore = " + String.valueOf(intUserScore));
+    }
     private void setValueToQuestion() {
         if(intTime == 4) {
             //intTime = 0;
             Intent objIntent = new Intent(MainActivity.this, ShowAnswer.class);
+            objIntent.putExtra("Score", intUserScore);
             startActivity(objIntent);
-
+            finish();
         }
         intTime++;
         objQuestion.setIntQuestion(intTime);
