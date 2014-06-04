@@ -25,14 +25,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imgAnimal"
+            android:id="@+id/radAnswer"
             android:src="@drawable/sheep"
             android:layout_gravity="center_horizontal" />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/radAnswer">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -73,5 +74,6 @@
         android:layout_gravity="center_horizontal"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="false" />
+        android:layout_alignParentTop="false"
+        android:onClick="ClickAnswer" />
 </RelativeLayout>

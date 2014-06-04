@@ -4,15 +4,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 
 public class MainActivity extends ActionBarActivity {
+    private ImageView imgAnimal;
+    private RadioGroup radAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    private void initWidget() {
+        imgAnimal = (ImageView) findViewById(R.id.imgAnimal);
+        radAnswer = (RadioGroup) findViewById(R.id.radAnswer);
+    }
+
+    public void ClickAnswer(View view) {
+
+    } // end of ClickAnswer
 
 
     @Override
