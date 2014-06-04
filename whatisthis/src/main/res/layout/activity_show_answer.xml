@@ -46,7 +46,8 @@
             android:text="@string/playagain"
             android:id="@+id/button8"
             android:layout_weight="1"
-            android:textColor="@color/text_color" />
+            android:textColor="@color/text_color"
+            android:onClick="ClickPlayAgain" />
 
         <Button
             android:layout_width="match_parent"
@@ -54,7 +55,8 @@
             android:text="@string/exit"
             android:id="@+id/button7"
             android:layout_weight="1"
-            android:textColor="@color/text_color" />
+            android:textColor="@color/text_color"
+            android:onClick="ClickExit" />
     </LinearLayout>
 
 </RelativeLayout>

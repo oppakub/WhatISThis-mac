@@ -1,5 +1,6 @@
 package com.example.whatisthis_mac.whatisthis;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +17,17 @@ public class ShowAnswer extends ActionBarActivity {
         setContentView(R.layout.activity_show_answer);
         txtShowScore = (TextView) findViewById(R.id.txtShowScore);
         txtShowScore.setText(String.valueOf(getIntent().getExtras().getInt("Score")));
+    }
+
+    public void ClickPlayAgain() {
+        Intent objIntent = new Intent(ShowAnswer.this, MainActivity.class);
+        startActivity(objIntent);
+        finish();
+
+    }
+    
+    public void ClickExit() {
+        finish();
     }
 
 
