@@ -2,6 +2,7 @@ package com.example.whatisthis_mac.whatisthis;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,11 +13,37 @@ import android.widget.RadioGroup;
 public class MainActivity extends ActionBarActivity {
     private ImageView imgAnimal;
     private RadioGroup radAnswer;
+    private String strAnswer;
+    private MyAlertDialog objMyAlert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initWidget();
+        radAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.radCow:
+                        strAnswer = "Cow";
+                        break;
+                    case R.id.radHorse:
+                        strAnswer = "Horse";
+                        break;
+                    case R.id.radPig:
+                        strAnswer = "Pig";
+                        break;
+                    case R.id.radSheep:
+                        strAnswer = "Sheep";
+                        break;
+                    default:
+                        strAnswer = null;
+                        break;
+                }
+            }
+        });
+
     }
 
     private void initWidget() {
@@ -25,8 +52,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void ClickAnswer(View view) {
+           checkChooseAnswer();
 
     } // end of ClickAnswer
+
+    private void checkChooseAnswer() {
+        if(strAnswer != null) {
+            Log.d("oppa", "strAnswer = " + strAnswer);
+        } else {
+            Log.d("oppa", "Please select one choice");
+        }
+    }
 
 
     @Override
