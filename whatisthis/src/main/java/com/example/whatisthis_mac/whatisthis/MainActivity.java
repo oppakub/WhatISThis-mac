@@ -1,5 +1,6 @@
 package com.example.whatisthis_mac.whatisthis;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -101,7 +102,10 @@ public class MainActivity extends ActionBarActivity {
 
     private void setValueToQuestion() {
         if(intTime == 4) {
-            intTime = 0;
+            //intTime = 0;
+            Intent objIntent = new Intent(MainActivity.this, ShowAnswer.class);
+            startActivity(objIntent);
+            
         }
         intTime++;
         objQuestion.setIntQuestion(intTime);
